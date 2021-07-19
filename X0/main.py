@@ -56,13 +56,11 @@ def step_check():
         if len(step) != 2:
             print('Введено неверное количество чисел. Введите 2 числа!')
             continue
-
         i, j = step
 
         if not (i.isdigit()) or not (j.isdigit()):
             print('Введены неверные символы. Введите 2 числа!')
             continue
-
         i, j = int(i), int(j)
 
         if 0 > i or i > 2 or 0 > j or j > 2:
@@ -85,24 +83,23 @@ def win_check():
            ((2, 0), (1, 1), (0, 2)))  # диагональ 20-02
 
     for step in win:
-        symbols = []
-        for c in step:
-            symbols.append(cells[c[0]][c[1]])
-        if symbols == [pl_one, pl_one, pl_one]:
+        list_steps = []
+        for i in step:
+            list_steps.append(cells[i[0]][i[1]])
+        if list_steps == [pl_one, pl_one, pl_one]:
             print('Выиграл', pl_one_name + '!')
             return True
 
-        if symbols == [pl_two, pl_two, pl_two]:
+        if list_steps == [pl_two, pl_two, pl_two]:
             print('Выиграл', pl_two_name + '!')
             return True
     return False
+# основная часть
 
 cells = [[' '] * 3 for i in range(3)]
-
 greeting()
 rules()
 invite()
-
 steps_count = 0
 
 while steps_count <= 9:
@@ -112,7 +109,6 @@ while steps_count <= 9:
         print(pl_one_name, ', твой ход: ')
     else:
         print(pl_two_name, ', твой ход: ')
-
     x, y = step_check()
 
     if steps_count % 2 == 1:
