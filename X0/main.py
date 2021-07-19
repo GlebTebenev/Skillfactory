@@ -94,8 +94,9 @@ def win_check():
             print('Выиграл', pl_two_name + '!')
             return True
     return False
-# основная часть
 
+
+# основная часть
 cells = [[' '] * 3 for i in range(3)]
 greeting()
 rules()
