@@ -46,3 +46,5 @@ print('9. The most profitable film -', q_9)
 q_10 = data[(data.release_year <= 2014) & (data.release_year >= 2012)].profit.min()
 q_10 = data.original_title[data.profit == q_10]
 print('10. The most unprofitable film -', q_10)
+
+# А потом я разобрался с файлом ipynb... 
